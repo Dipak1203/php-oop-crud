@@ -52,10 +52,10 @@
                         <td><?php echo  $price; ?></td>
                         <td><?php echo $desc; ?></td>
                         <td>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <a href="delete.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete</a>
                         </td>
                         <td>
-                            <a href="" class="btn btn-success">Edit</a>
+                            <a href="edit.php?edit=<?php echo $id; ?>" class="btn btn-success">Edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

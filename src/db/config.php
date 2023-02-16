@@ -44,4 +44,30 @@ class Database
             echo "Error during fetching the data";
         }
     }
+
+    public function delete($table, $id)
+    {
+        $sql = "DELETE FROM $table WHERE `id`=$id";
+
+        if (mysqli_query($this->conn, $sql)) {
+            return "User Deleted";
+        } else {
+            return "user Can not deleted";
+        }
+    }
+
+    public function find($table, $id)
+    {
+        $sql = "SELECT * FROM $table WHERE 'id'=$id";
+        $result = mysqli_query($this->conn, $sql);
+
+        if ($result) {
+            if (mysqli_num_rows($result)) {
+                return mysqli_fetch_assoc($result);
+            }
+            return false;
+        } else {
+            echo "Error during fetching one data";
+        }
+    }
 }
